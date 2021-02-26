@@ -44,7 +44,7 @@ function Invoke-Shellingan{
     $output =  "`$$rand2=255;`$$rand1=[sYsTeM.TeXT.eNcOdInG];`$$rand3=`$$rand1::utF8.gEtbYtES('');`$$rand1::asCii.gEtsTRiNG(`$(([bYtE]" + $output + ")|%{`$$rand3+=(`$_+(`$$rand2+$derot))%`$$rand2};`$$rand3))"
     
     #options
-    if($iex -eq $true){$output+= "|iex"}
+    if($iex){$output+= "|iex"}
     if($recurse -gt 1){Invoke-Shellingan $output $iex ($recurse-=1)  }
     else{
         write-host -ForegroundColor DarkRed "<O> SHELLINGAN:"
