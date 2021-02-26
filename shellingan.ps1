@@ -27,8 +27,7 @@ function Invoke-Shellingan{
     }
 
     #byte rotation
-    $cmd = rul($cmd)
-    [byte[]] $scriptBytes = [system.Text.Encoding]::UTF8.GetBytes($cmd)    
+    [byte[]] $scriptBytes = [system.Text.Encoding]::UTF8.GetBytes((rul($cmd)))  
     $rot = Get-Random -Maximum 254 -Minimum 5
     $derot = 255 - $rot
     $rotbytes = [system.Text.Encoding]::UTF8.GetBytes('')
